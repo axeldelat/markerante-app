@@ -1,7 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [],
+  purge: {
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -16,6 +17,7 @@ module.exports = {
   plugins: [
     require( 'tailwindcss' ),
     require( 'precss' ),
-    require( 'autoprefixer' )
+    require( 'autoprefixer' ),
+    require( '@tailwindcss/forms' ),
   ],
 }

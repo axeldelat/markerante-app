@@ -3,11 +3,21 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import React, { useState } from 'react';
+import Router from 'next/router';
+import router from 'next/router';
+
 
 
 
 export default function Home() {
-  const [value, setValue] = useState(null)
+  const [rname, setRname] = useState('')
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    let gfUrl = `https://www.misistemadepedidos.com/admin/public/signup?restaurant_name=${rname}`
+    router.push(gfUrl)
+  }
+
   return (
     <div>
       <Head>
@@ -37,15 +47,30 @@ export default function Home() {
                   <p className="mt-6 max-w-lg mx-auto text-center text-xl text-white sm:max-w-3xl">
                     Sin Comisiones y Gratis
                   </p>
-                  <div className="mt-10 sm:mt-12">
-                    <a href="https://www.misistemadepedidos.com/admin/public/login" target="_blank" rel="noreferrer">
-                      <button
-                        
-                        className="block w-full py-3 px-4 rounded-md shadow bg-red-600 text-white font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900"
+                  <div className="mt-8 lg:mt-8 ">
+                    <form onSubmit={handleSubmit} className="sm:flex justify-center">
+                      <label htmlFor="restaurant-name" className="sr-only">
+                        Nombre del Restaurante
+                      </label>
+                      <input
+                        id="rname"
+                        name="rname"
+                        type="text"
+                        value={rname}
+                        onChange={ e => setRname(e.target.value) }
+                        required
+                        className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-yellow-400 focus:border-yellow-400 sm:max-w-xs rounded-md"
+                        placeholder="Nombre del Restaurante"
+                      />
+                      <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                        <button
+                          type="submit"
+                          className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700"
                         >
-                        Comenzar
-                      </button>
-                    </a>
+                          Comenzar
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
