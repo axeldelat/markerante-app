@@ -4,7 +4,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import React, { useState } from 'react';
 import Router from 'next/router';
-import router from 'next/router';
 
 
 
@@ -15,7 +14,7 @@ export default function Home() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     let gfUrl = `https://www.misistemadepedidos.com/admin/public/signup?restaurant_name=${rname}`
-    router.push(gfUrl)
+    Router.push(gfUrl)
   }
 
   return (
