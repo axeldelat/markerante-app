@@ -75,7 +75,7 @@ export default function Example() {
         </Link>
       </div>
       <div>
-      <div className=" md:flex items-center justify-end md:flex-1 lg:w-0">
+      <div className="md:flex items-center justify-end md:flex-1 lg:w-0">
               <a
                 href="https://www.misistemadepedidos.com/"
                 target="_blank"
