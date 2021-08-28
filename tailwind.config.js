@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   purge: [
@@ -21,5 +21,6 @@ module.exports = {
     require( 'precss' ),
     require( 'autoprefixer' ),
     require( '@tailwindcss/forms' ),
+    require("@tailwindcss/typography"),
   ],
 }
