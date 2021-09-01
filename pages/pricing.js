@@ -33,14 +33,14 @@ export default function Example() {
     <>
     <Header/>
     <div className="bg-white">
-      <div className="max-w-7xl mx-autoi px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
           <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">Crecemos <span className="text-yellow-400">contigo</span>, <br />Llévemos a tu <span className="text-red-600">Restaurante</span> al siguiente nivel</h1>
           <p className="mt-5 text-xl text-gray-500 sm:text-center">
             Comienza gratis y mejora tu servicio conforme ves los beneficios de trababar tu restaurante en la nueva era digital
           </p>
         </div>
-        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-2">
           {tiers.map((tier) => (
             <div key={tier.name} className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
               <div className="p-6">
