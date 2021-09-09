@@ -6,12 +6,13 @@ import Link from 'next/link'
 
 const navigation = [
   { name: 'Precio', href: 'pricing' },
+  { name: 'Contacto', href: 'contact'}
 ]
 
 export default function Example() {
   return (
     <>
-      <div className="relative pt-6 pb-16 sm:pb-24">
+      <div className="relative p-10">
         <Popover>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <nav className="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
