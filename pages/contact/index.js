@@ -1,17 +1,63 @@
-import { ExternalLinkIcon } from '@heroicons/react/solid'
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-
-const navigation = [
-  { name: 'Work', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Blog', href: '#' },
-]
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+import Link from 'next/link'
+import { useState } from 'react'
+import Router from 'next/router';
+import { useForm } from "react-hook-form";
 
 export default function Contact() {
+  const [fname, setFname] = useState('')
+  const [lname, setLname] = useState('')
+  const [email, setEmail] = useState('')
+  const [restaurant, setRestaurant] = useState('')
+  const [phone, setPhone] = useState('')
+  const [message, setMessage] = useState('')
+  const [referral, setReferral] = useState('')
+  const [privacyAcceptance, setPrivacyAcceptance] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+  e.preventDefault()
+  console.log('Sending')
+  let data = {
+    fname,
+    lname,
+    email,
+    restaurant,
+    phone,
+    message,
+    referral,
+    privacyAcceptance,
+    submitted
+  }
+  fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log(res)
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        setSubmitted(true)
+        setFname('')
+        setLname('')
+        setMessage('')
+        setPhone('')
+        setReferral('')
+        setRestaurant('')
+        setPrivacyAcceptance('')
+        setEmail('')
+      }
+    })
+    Router.push('contact/thank-you')
+  }
+
   return (
     <div>
       <Head>
@@ -24,7 +70,7 @@ export default function Contact() {
         {/* Header */}
         <div className="py-24 bg-gray-50 sm:py-32">
           <div className="max-w-md mx-auto pl-4 pr-8 sm:max-w-lg sm:px-6 lg:max-w-7xl lg:px-8">
-          <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">Contáctanos</h1>
+          <h1 className="text-5xl font-extrabold text-yellow-400 sm:text-center">Contáctanos</h1>
             <p className="mt-5 text-xl text-gray-500 sm:text-center">
               Resuelve todas tus dudas acerca de nuestros productos o servicios.
             </p>
@@ -62,7 +108,8 @@ export default function Contact() {
                         id="first-name"
                         required
                         autoComplete="given-name"
-                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border-gray-300 rounded-md"
+                        className="block w-full shadow-sm sm:text-sm focus:ring-yellow-400 focus:border-yellow-400 border-gray-300 rounded-md"
+                        onChange={ (e) =>{setFname(e.target.value)} }
                       />
                     </div>
                   </div>
@@ -74,10 +121,12 @@ export default function Contact() {
                       <input
                         type="text"
                         name="last-name"
+                        
                         id="last-name"
                         required
                         autoComplete="family-name"
-                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border-gray-300 rounded-md"
+                        className="block w-full shadow-sm sm:text-sm focus:ring-yellow-400 focus:border-yellow-400 border-gray-300 rounded-md"
+                        onChange={ (e) =>{setLname(e.target.value)} }
                       />
                     </div>
                   </div>
@@ -92,7 +141,8 @@ export default function Contact() {
                         type="email"
                         required
                         autoComplete="email"
-                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border-gray-300 rounded-md"
+                        className="block w-full shadow-sm sm:text-sm focus:ring-yellow-400 focus:border-yellow-400 border-gray-300 rounded-md"
+                        onChange={ (e) =>{setEmail(e.target.value)} }
                       />
                     </div>
                   </div>
@@ -107,7 +157,8 @@ export default function Contact() {
                         id="company"
                         required
                         autoComplete="organization"
-                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border-gray-300 rounded-md"
+                        className="block w-full shadow-sm sm:text-sm focus:ring-yellow-400 focus:border-yellow-400 border-gray-300 rounded-md"
+                        onChange={ (e) =>{setRestaurant(e.target.value)} }
                       />
                     </div>
                   </div>
@@ -123,7 +174,8 @@ export default function Contact() {
                         required
                         autoComplete="tel"
                         aria-describedby="phone-description"
-                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border-gray-300 rounded-md"
+                        className="block w-full shadow-sm sm:text-sm focus:ring-yellow-400 focus:border-yellow-400 border-gray-300 rounded-md"
+                        onChange={ (e) =>{setPhone(e.target.value)} }
                       />
                     </div>
                   </div>
@@ -139,8 +191,9 @@ export default function Contact() {
                         name="how-can-we-help"
                         aria-describedby="how-can-we-help-description"
                         rows={4}
-                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border border-gray-300 rounded-md"
+                        className="block w-full shadow-sm sm:text-sm focus:ring-yellow-400 focus:border-yellow-400 border border-gray-300 rounded-md"
                         defaultValue={''}
+                        onChange={ (e) =>{setMessage(e.target.value)} }
                       />
                     </div>
                   </div>
@@ -153,14 +206,31 @@ export default function Contact() {
                         type="text"
                         name="how-did-you-hear-about-us"
                         id="how-did-you-hear-about-us"
-                        className="shadow-sm focus:ring-grape-500 focus:border-grape-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm focus:ring-yellow-400 focus:border-yellow-400 block w-full sm:text-sm border-gray-300 rounded-md"
+                        onChange={ (e) =>{setReferral(e.target.value)} }
                       />
                     </div>
                   </div>
+                  <div className="relative flex items-start">
+                          <div className="flex items-center h-5">
+                            <input
+                              id="candidates"
+                              name="candidates"
+                              type="checkbox"
+                              value="true"
+                              className="focus:ring-red-500 h-4 w-4 text-red-600 border-gray-300 rounded"
+                              onChange={ (e) =>{setPrivacyAcceptance(e.target.value)} }
+                            />
+                          </div>
+                          <div className="ml-3 text-sm">
+                            <p className="text-gray-500">Acepto compartir mi información con fines publicitarios. Ver <Link href="privacy" passHref><span className="text-red-600">aviso de privacidad</span></Link>.</p>
+                          </div>
+                        </div>
                   <div className="text-right sm:col-span-2">
                     <button
                       type="submit"
                       className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700"
+                      onClick={(e)=>{handleSubmit(e)}}
                     >
                       Enviar
                     </button>

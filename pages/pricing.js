@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { CheckIcon } from '@heroicons/react/solid'
@@ -23,7 +22,7 @@ const tiers = [
     includedFeatures: [
       'TODO lo incluido en el Plan Básico','Asistencia y Soporte vía WhatsApp',
       'Procesamiento de Pago con Tarjeta Visa, Mastercard, American Express, Apple Pay y Google Pay',
-      'Sistema antifraude de cobro seguro','Comisión por transacción 4.5% + $3'
+      'Sistema antifraude de cobro seguro Stripe','Comisión por transacción 4% + $3'
     ],
     imgUrl: '/food-truck.svg',
   },
@@ -31,26 +30,22 @@ const tiers = [
 
 export default function Example() {
   return (
-    <div>
-      <Head>
-        <title>Contacto - Marketante - Guía de Marketing para Restaurantes</title>
-        <meta name="description" content="Guía de Marketing para Restaurantes" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
-      <main>
-
-        {/* Header */}
-        <div className="py-24 bg-gray-50 sm:py-32">
-          <div className="max-w-md mx-auto pl-4 pr-8 sm:max-w-lg sm:px-6 lg:max-w-7xl lg:px-8">
-            <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">Crecemos <span className="text-yellow-400">contigo</span>, <br />Llévemos a tu <span className="text-red-600">Restaurante</span> al siguiente nivel</h1>
-            <p className="mt-5 text-xl text-gray-500 sm:text-center">
-              Comienza gratis y mejora tu servicio conforme ves los beneficios de trababar tu restaurante en la nueva era digital
-            </p>
-          </div>
+    <>
+    <Header/>
+    <main>
+      {/* Header */}
+      <div className="py-24 bg-gray-50 sm:py-32">
+        <div className="max-w-md mx-auto pl-4 pr-8 sm:max-w-lg sm:px-6 lg:max-w-7xl lg:px-8">
+          <h1 className="text-5xl font-extrabold text-gray-900 sm:text-center">Crecemos <span className="text-yellow-400">contigo</span>, <br />Llévemos a tu <span className="text-red-600">Restaurante</span> al siguiente nivel</h1>
+          <p className="mt-5 text-xl text-gray-500 sm:text-center">
+            Comienza gratis y mejora tu servicio conforme ves los beneficios de trababar tu restaurante en la nueva era digital
+          </p>
         </div>
-
-        <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4">
+      </div>
+      {/*Precios*/}
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-2">
             {tiers.map((tier) => (
               <div key={tier.name} className="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
                 <div className="p-6">
@@ -87,8 +82,10 @@ export default function Example() {
               </div>
             ))}
           </div>
-      </main>
-      <Footer/>
-    </div>
+        </div>
+      </div>
+    </main>
+    <Footer/>
+    </>
   )
 }

@@ -5,9 +5,6 @@ import Footer from '../components/Footer'
 import React, { useState } from 'react';
 import Router from 'next/router';
 
-
-
-
 export default function Home() {
   const [rname, setRname] = useState('')
 
