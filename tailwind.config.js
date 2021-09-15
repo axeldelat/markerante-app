@@ -18,5 +18,6 @@ module.exports = {
     require( 'autoprefixer' ),
     require( '@tailwindcss/forms' ),
     require("@tailwindcss/typography"),
+    require('@tailwindcss/aspect-ratio'),
   ],
 }

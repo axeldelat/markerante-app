@@ -121,7 +121,6 @@ export default function Contact() {
                       <input
                         type="text"
                         name="last-name"
-                        
                         id="last-name"
                         required
                         autoComplete="family-name"

@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { CheckIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
+import Calltoaction from '../components/Calltoaction'
 
 const tiers = [
   {
@@ -26,6 +27,27 @@ const tiers = [
     ],
     imgUrl: '/food-truck.svg',
   },
+]
+
+const services = [
+  {
+    name: 'Configuración de Menú',
+    description: '¡Despreocupate! Nosotros nos encargamos de de subir tu menú a la plataforma. Nosotros nos encagargamos de todo: Subiremos los items de tu menú, adjuntaremos fotografías y configuraremos combos y promociones, etc.',
+    deliveryTime: '1 Semana',
+    price: '5,999',
+    stripeUrl: 'https://buy.stripe.com/cN2bKkfuQckJ1i0000',
+    imgUrl: '/menu.png',
+    imgAlt: 'Menú de Sistema de Pedidos Gloria Food'
+  },
+  {
+    name: 'Asesoría Profesional',
+    description: 'Capacitación especial para equipos en el uso del sistema en todas las fases. Desde como comenzar a recibir pedidos hasta como generar pedidos por medio de campañas de Marketing Digital. Solicita asesoría en el uso del sistema de pedidos o en Marketing para Restaurantes',
+    deliveryTime: '2 Horas',
+    price: '1,200ls',
+    stripeUrl: 'https://buy.stripe.com/28odSseqMacB8KsdQR',
+    imgUrl: '/expert.jpg',
+    imgAlt: 'Especialistas en marketing para restaurantes'
+  }
 ]
 
 export default function Example() {
@@ -83,6 +105,12 @@ export default function Example() {
             ))}
           </div>
         </div>
+      </div>
+      {/* Servicios */}
+      <div className="bg-white">
+        {services.map( (service) => (
+          <Calltoaction key={`services${service+1}`} headline={service.name} description={service.description} price={service.price} deliveryTime={service.deliveryTime} stripeUrl={service.stripeUrl} imgUrl={service.imgUrl}/>
+        ))}
       </div>
     </main>
     <Footer/>
