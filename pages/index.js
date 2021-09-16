@@ -31,7 +31,7 @@ export default function Home() {
                 <Image
                   className="h-full w-full object-cover"
                   src="/background.jpg"
-                  alt="People working on laptops"
+                  alt="Guía de Marketing para restaurantes"
                   layout="fill"
                 />
                 <div className="absolute inset-0 bg-yellow-200 mix-blend-multiply" />
