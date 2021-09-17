@@ -43,7 +43,7 @@ const services = [
     name: 'Asesoría Profesional',
     description: 'Capacitación especial para equipos en el uso del sistema en todas las fases. Desde como comenzar a recibir pedidos hasta como generar pedidos por medio de campañas de Marketing Digital. Solicita asesoría en el uso del sistema de pedidos o en Marketing para Restaurantes',
     deliveryTime: '2 Horas',
-    price: '1,200ls',
+    price: '1,200',
     stripeUrl: 'https://buy.stripe.com/28odSseqMacB8KsdQR',
     imgUrl: '/expert.jpg',
     imgAlt: 'Especialistas en marketing para restaurantes'

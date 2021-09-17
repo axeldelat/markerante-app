@@ -5,11 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navigation = [
+  { name: 'Inicio', href: '/' },
   { name: 'Precio', href: 'pricing' },
-  { name: 'Contacto', href: 'contact'}
+  { name: 'Contacto', href: 'contact'},
 ]
 
-export default function Example() {
+export default function Header() {
   return (
     <>
       <div className="relative py-1 md:py-6">
