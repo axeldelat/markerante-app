@@ -50,7 +50,7 @@ export default function Home() {
                   <span className="block text-white">{process.env.ELASTICEMAIL_API}Todo para hacer <span className=" text-yellow-400">crecer</span> tu <span className="block text-red-600">Restaurante</span> en línea.</span>
                 </h1>
                 <p className="mt-6 max-w-lg mx-auto text-center text-xl text-white sm:max-w-3xl">
-                  Sin Comisiones y Gratis
+                  Empieza <em>Gratis</em> y Sin Comisiones
                 </p>
                 <div className="mt-8 lg:mt-8 ">
                   <form onSubmit={handleSubmit} className="sm:flex justify-center">
