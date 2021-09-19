@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer/Footer'
 import ContactForm from '../../components/ContactForm'
 
 export default function Contact() {
