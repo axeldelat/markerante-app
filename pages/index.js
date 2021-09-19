@@ -111,7 +111,7 @@ export default function Home() {
                       href="#start"
                       className="inline-flex bg-red-600 bg-origin-border px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white"
                     >
-                      Comenzar
+                      ¡Comienza Hoy!
                     </a>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export default function Home() {
                       href="#start"
                       className="inline-flex bg-red-600 bg-origin-border px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white"
                     >
-                      Comenzar
+                      ¡Comienza Hoy!
                     </a>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function Home() {
                       href="#start"
                       className="inline-flex bg-red-600 bg-origin-border px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white"
                     >
-                      Comenzar
+                      ¡Comienza Hoy!
                     </a>
                   </div>
                 </div>
@@ -250,7 +250,7 @@ export default function Home() {
                       href="#start"
                       className="inline-flex bg-red-600 bg-origin-border px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white"
                     >
-                      Comenzar
+                      ¡Comienza Hoy!
                     </a>
                   </div>
                 </div>
@@ -298,7 +298,7 @@ export default function Home() {
                       href="#start"
                       className="inline-flex bg-red-600 bg-origin-border px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white"
                     >
-                      Comenzar
+                      ¡Comienza Hoy!
                     </a>
                   </div>
                 </div>
