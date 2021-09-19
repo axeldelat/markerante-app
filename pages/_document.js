@@ -12,6 +12,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="facebook-domain-verification" content="8m29vxni60ezjffmnq1sx6peoqn3xq" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
