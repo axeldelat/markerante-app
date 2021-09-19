@@ -1,8 +1,9 @@
 import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Footer from '../components/footer/Footer'
 import { CheckIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import Calltoaction from '../components/Calltoaction'
+import Link from 'next/link'
 
 const tiers = [
   {
@@ -83,14 +84,22 @@ export default function Example() {
                     <span className="text-4xl font-extrabold text-gray-900">${tier.priceMonthly}</span>{' '}
                     <span className="text-base font-medium text-gray-500">mxn/mensual</span>
                   </p>
-                  <a
-                    href={tier.href}
-                    className="mt-8 block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-                  >
-                    Iniciar {tier.name}
-                  </a>
+                </div>
+                <div className="pt-6 pb-6 px-6">
+                  <Link href={tier.href}>
+                    <a target="_blank"
+                      >
+                      <button
+                      className="block w-full bg-gray-800 border border-gray-800 rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
+                      >
+                        Iniciar {tier.name}
+                      </button>
+                    </a>
+                  </Link>
                 </div>
                 <div className="pt-6 pb-8 px-6">
+                  <div>
+                  </div>
                   <h3 className="text-xs font-medium text-gray-900 tracking-wide uppercase">Incluye</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {tier.includedFeatures.map((feature) => (

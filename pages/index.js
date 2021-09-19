@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Footer from '../components/footer/Footer'
 import React, { useState } from 'react';
 import Router from 'next/router';
 
@@ -121,7 +121,7 @@ export default function Home() {
               <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                 <Image
                   className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                  src="/hp-card1-78edac9036.png.webp"
+                  src="/images/index/hp-card1-78edac9036.png.webp"
                   alt="Customer profile user interface"
                   width={630}
                   height={513}
@@ -165,7 +165,7 @@ export default function Home() {
               <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                 <Image
                   className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                  src="/es-card2-48d2b79c59.png.webp"
+                  src="/images/index/es-card2-48d2b79c59.png.webp"
                   alt="Customer profile user interface"
                   width={646}
                   height={578}
@@ -211,7 +211,7 @@ export default function Home() {
               <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                 <Image
                   className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                  src="/es-card3-cdd9c51cbd.png.webp"
+                  src="/images/index/es-card3-cdd9c51cbd.png.webp"
                   alt="Customer profile user interface"
                   width={630}
                   height={670}
@@ -260,7 +260,7 @@ export default function Home() {
               <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                 <Image
                   className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                  src="/es-card4-f8626b0414.png.webp"
+                  src="/images/index/es-card4-f8626b0414.png.webp"
                   alt="Customer profile user interface"
                   width={650}
                   height={680}
@@ -308,7 +308,7 @@ export default function Home() {
               <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                 <Image
                   className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                  src="/es-card5-03d67d334c.png.webp"
+                  src="/images/index/es-card5-03d67d334c.png.webp"
                   alt="Customer profile user interface"
                   width={640}
                   height={640}

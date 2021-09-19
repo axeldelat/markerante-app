@@ -1,6 +1,5 @@
 import '../styles/global.css'
-import WhatsAppWidget from 'react-whatsapp-widget'
-import 'react-whatsapp-widget/dist/index.css'
+import WhatsAppWidget from '../components/WhatsAppBtn'
 import FacebookPixel from '../components/analitycs/FacebookPixel'
 
 function MyApp({ Component, pageProps }) {

@@ -4,6 +4,7 @@ module.exports = {
     domains: [
       'tailwindui.com',
       'images.unsplash.com',
+      'www.facebook.com',
   ],
   },
   webpack(config) {
