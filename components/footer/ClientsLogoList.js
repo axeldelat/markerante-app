@@ -50,7 +50,7 @@ export default function ClientsLogoList() {
         </p>
         <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:mt-8">
           {clients.map((client) => (
-            <div key={client.id} className="col-span-1 flex justify-center py-8 px-8 bg-white rounded-lg">
+            <div key={client.id} className="col-span-1 flex justify-center bg-white rounded-lg">
               <Link href={client.linkUrl} passHref>
                 <a target="_blank">
                   <Image
