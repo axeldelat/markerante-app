@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/footer/Footer'
 import React, { useState } from 'react';
 import Router from 'next/router';
+import sanityClient from '../lib/sanityClient';
 
 import {
   CalendarIcon,
@@ -12,6 +13,30 @@ import {
   CashIcon,
   DeviceMobileIcon,
 } from '@heroicons/react/outline'
+import { client } from 'elasticemail-webapiclient';
+
+/*
+const Restaurants = ({restaurant}) => {
+  return (
+    <article>
+      <h1>{post?.slug.current}</h1>
+      {console.log(post)}
+    </article>
+  )
+}
+
+
+export async function getStaticProps(context) {
+  const { slug = "" } = context.params
+  const restaurant = await sanityClient.fetch(`
+  `, {slug})
+  return {
+    props: {
+      restaurant
+    }
+  }
+}
+*/
 
 export default function Home() {
   const [rname, setRname] = useState('')
@@ -25,7 +50,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Marketante - Guía de Marketing para Restaurantes</title>
+        <title>Markerante - Guía de Marketing para Restaurantes</title>
         <meta name="description" content="Guía de Marketing para Restaurantes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
