@@ -5,6 +5,7 @@ module.exports = {
       'tailwindui.com',
       'images.unsplash.com',
       'www.facebook.com',
+      'cdn.sanity.io',
   ],
   },
   webpack(config) {

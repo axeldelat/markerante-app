@@ -2,9 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Footer from '../components/footer/Footer'
+import RestaurantCard from '../components/footer/RestaurantCard'
 import React, { useState } from 'react';
 import Router from 'next/router';
-import sanityClient from '../lib/sanityClient';
+import Link from 'next/link'
+
+import { getClient } from "../lib/sanity.server"
+import groq from "groq"
 
 import {
   CalendarIcon,
@@ -13,34 +17,9 @@ import {
   CashIcon,
   DeviceMobileIcon,
 } from '@heroicons/react/outline'
-import { client } from 'elasticemail-webapiclient';
 
-/*
-const Restaurants = ({restaurant}) => {
-  return (
-    <article>
-      <h1>{post?.slug.current}</h1>
-      {console.log(post)}
-    </article>
-  )
-}
-
-
-export async function getStaticProps(context) {
-  const { slug = "" } = context.params
-  const restaurant = await sanityClient.fetch(`
-  `, {slug})
-  return {
-    props: {
-      restaurant
-    }
-  }
-}
-*/
-
-export default function Home() {
+const Home = ({restaurants}) => {
   const [rname, setRname] = useState('')
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
     let gfUrl = `https://www.misistemadepedidos.com/admin/public/signup?restaurant_name=${rname}`
@@ -342,9 +321,35 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+        <div className="bg-gray-50">
+          <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+            <p className="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
+              Empresas que confían en nosotros
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:mt-8">
+              {restaurants?.map((restaurant) => (
+                  <RestaurantCard key={restaurant._id} restaurant={restaurant} />
+              ))}
+            </div>
+          </div>
+        </div>
       </main>
+
       <Footer />
-    </div>
+  </div>
   )
 }
+
+export async function getStaticProps({ preview = false}) {
+  const restaurants = await getClient(preview).fetch(groq`
+  *[_type == "restaurant" && featured == true] {restaurantName, restaurantLogo, restaurantWebsite, featured}
+  `)
+
+  return{
+    props: {
+      restaurants,
+    }
+  }
+}
+
+export default Home
