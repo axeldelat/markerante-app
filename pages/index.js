@@ -46,6 +46,7 @@ const Home = ({restaurants}) => {
                   src="/background.jpg"
                   alt="Guía de Marketing para restaurantes"
                   layout="fill"
+                  priority
                 />
                 <div className="absolute inset-0 bg-yellow-200 mix-blend-multiply" />
               </div>
