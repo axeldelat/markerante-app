@@ -5,7 +5,6 @@ import Footer from '../components/footer/Footer'
 import RestaurantCard from '../components/footer/RestaurantCard'
 import React, { useState } from 'react';
 import Router from 'next/router';
-import Link from 'next/link'
 
 import { getClient } from "../lib/sanity.server"
 import groq from "groq"
